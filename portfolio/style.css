@@ -1,0 +1,321 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 50px; /* Adjust the margin to avoid overlap with the fixed navbar */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Add smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  background-size: cover;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.hero img{
+  border: 1px solid orangered;
+  box-shadow: 1px 1px 4px 4px orangered;
+}
+
+.hero .btn {
+  font-size: 1.1rem;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #c42d07;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.section {
+  padding: 60px 0;
+}
+
+h4 {
+  color: #333;
+  font-weight: bold;
+}
+
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* white color for text */
+}
+
+.navbar-nav .nav-link.active {
+  color: #fff; /* Orange color for the active link */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff; /* Blue color on hover */
+}
+.navbar {
+  width: 100%;
+  z-index: 1000;
+  
+}
+
+/* Add styles for the navbar items for mobile screens */
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 25px;
+}
+/* Style for navigation links */
+/* Style for navigation links */
+.navbar-nav .nav-link {
+  position: relative; /* Required for the underline effect */
+  color: white; /* Default text color (you can change it) */
+  transition: color 0.3s ease; /* Optional: smooth transition for text color */
+}
+
+/* Underline effect on hover */
+.navbar-nav .nav-link::after {
+  content: ''; /* Create an empty pseudo-element */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%; /* Start with no underline */
+  height: 3px; /* Height of the underline */
+  background-color: orange; /* Color of the underline */
+  transition: width 0.3s ease; /* Animate the width from left to right */
+}
+
+/* On hover, animate the underline from left to right */
+.navbar-nav .nav-link:hover::after {
+  width: 100%; /* Expand the underline to 100% width */
+}
+
+/* Optional: Active state color change */
+.navbar-nav .nav-link.active {
+  color: #1376a8; /* Or any color you prefer for the active link */
+}
+.navbar-nav .nav-link.active::after {
+  background-color: #1376a8; /* Underline turns blue when active */
+}
+
+
+/* about style */
+#about {
+  padding: 60px 0;
+  color: #fff;
+  width: 100%;
+}
+
+#about .container {
+  max-width: 1100px;
+}
+
+/* Profile image styling (not circular, but rectangular or square) */
+#about img {
+  width: 100%;
+  height: auto;
+  max-width: 250px; /* Limit the width */
+  max-height: 250px; /* Limit the height */
+  margin-bottom: 20px;
+  border: 1px solid orangered;
+  box-shadow: 2px 2px 4px 4px orangered;
+}
+
+/* Personal Info Styling */
+.personal-info h3 {
+  font-size: 2rem;
+  margin-top: 15px;
+}
+
+.personal-info p {
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Progress bars for skills */
+.progress {
+  height: 20px;
+  margin-bottom: 50px;
+}
+
+.progress-bar {
+  background-color: #FF4C20;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 20px;
+}
+
+.skills-list h5 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #FF4C20;
+}
+
+/* Layout Adjustments for large screens */
+@media (min-width: 768px) {
+  #about .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* Ensure the about section is beside personal info and image on large screens */
+  .col-md-4:nth-child(1) {
+    order: 1; /* Place the image at the top */
+  }
+  .col-md-4:nth-child(2) {
+    order: 2; /* Keep Name, Email, Phone below the image */
+  }
+
+  .col-md-4:nth-child(3) {
+    order: 4; /* Move the About Me section to the right */
+  }
+  .col-md-4:nth-child(4) {
+    order: 3; /* Move Skills section below the image */
+  }
+
+  /* Reduce the spacing between the profile image and skills */
+  .skills-list {
+    margin-top: 10px; /* Reduce top margin between image and skills */
+  }
+
+  /* Optionally, reduce the bottom margin of image and personal info */
+  #about img {
+    margin-bottom: 15px; /* Reduced spacing under the image */
+  }
+
+  /* Personal info section adjustments */
+  .personal-info {
+    margin-bottom: 10px; /* Reduce spacing below personal info */
+  }
+}
+
+/* Layout Adjustments for smaller screens (Mobile Devices) */
+@media (max-width: 767px) {
+  #about .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ensure each column takes full width on mobile */
+  .col-12 {
+    margin-bottom: 20px;
+    text-align: center; /* Center align text on mobile */
+  }
+
+  /* Adjust profile image size on smaller screens */
+  #about img {
+    max-width: 200px; /* Resize image on smaller screens */
+    max-height: 200px;
+  }
+
+  /* Personal Info Styling */
+  .personal-info h3 {
+    font-size: 1.5rem; /* Adjust font size on mobile */
+  }
+
+  .personal-info p {
+    font-size: 0.9rem; /* Adjust font size on mobile */
+  }
+
+  /* Skills section on mobile */
+  .skills-list h5 {
+    font-size: 1rem; /* Adjust font size for skills on mobile */
+  }
+
+  /* Ensure progress bars are responsive */
+  .progress-bar {
+    font-size: 0.8rem; /* Adjust font size for progress bars on mobile */
+  }
+
+  /* Change column order on mobile: reorder columns for better stacking */
+  .col-12:nth-child(1) {
+    order: 0; /* Keep image at the top */
+  }
+
+  .col-12:nth-child(2) {
+    order: 1; /* Move personal info below image */
+  }
+
+  .col-12:nth-child(3) {
+    order: 2; /* Move skills below personal info */
+  }
+
+  .col-12:nth-child(4) {
+    order: 3; /* Move About Me section below skills */
+  }
+}
+
+
+#submit{
+   background-color: #FF4C20;
+   border: none;
+}
+
+
+#contact{
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+}
+
+
+
+
+.container h2{
+    margin-top: 70px;
+}
+.card-body .btn{
+    border: none;
+}
+.social-icons i {
+  font-size: 30px;
+  margin: 10px;
+  color: #FF4C20;
+}
+
+@keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px); /* Move up */
+    }
+    100% {
+      transform: translateY(0); /* Move back down */
+    }
+  }
+
+  /* Apply the animation to the image */
+  .move-up-down {
+    animation: moveUpDown 2s infinite ease-in-out;
+  }
+  footer{
+    width: 100%;
+  }
